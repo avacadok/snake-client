@@ -17,9 +17,29 @@ const connect = function() {
     console.log("Server says: ", data);
   });
   //send msg to the server when connects
+  // conn.on("connect", () => {
+  //   conn.write("Name: AVA");
+  //   conn.write("Move: up");
+  //   console.log("Successfully connected to game server");
+  // });
+
   conn.on("connect", () => {
     conn.write("Name: AVA");
-    console.log("Successfully connected to game server");
+    let moveArr = ["up", "up", "left", "right", "down"];
+
+    let delay = 1000;
+    for (let move of moveArr) {
+      setTimeout(() => {
+        conn.write(`Move: ${move}`);
+      }, delay);
+      delay += 50;
+    }
+
+    // setInterval(() => {
+    //   for (let move of moveArr) {
+    //     conn.write(`Move: ${move}`)
+    //   }
+    // }, 500);
   });
 
   return conn;
