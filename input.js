@@ -25,6 +25,12 @@ const handleUserInput = function(data) {
   } else if (data === "d") {
     connection.write("Move: right");
   }
+  //print out msg when click key
+  if (data === "l") {
+    connection.write("Say: YOLO");
+  } else if (data === "k") {
+    connection.write("Say: Wassup");
+  }
 };
 
 module.exports = {
