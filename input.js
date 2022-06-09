@@ -1,6 +1,9 @@
+//outer-most scope so that it can be used by all functions in this module
 let connection;
-const setupInput = function(client) {
-  connection = client;
+
+//changed setupInput() to accept an object that lets you interact with the server
+const setupInput = function(conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
