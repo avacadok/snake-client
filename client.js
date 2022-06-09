@@ -25,21 +25,21 @@ const connect = function() {
 
   conn.on("connect", () => {
     conn.write("Name: AVA");
-    let moveArr = ["up", "up", "left", "right", "down"];
+    // let moveArr = ["up", "up", "left", "right", "down"];
 
-    let delay = 1000;
-    for (let move of moveArr) {
-      setTimeout(() => {
-        conn.write(`Move: ${move}`);
-      }, delay);
-      delay += 50;
-    }
+    // let delay = 1000;
+    // for (let move of moveArr) {
+    //   setTimeout(() => {
+    //     conn.write(`Move: ${move}`);
+    //   }, delay);
+    //   delay += 50;
+    // }
 
-    // setInterval(() => {
-    //   for (let move of moveArr) {
-    //     conn.write(`Move: ${move}`)
-    //   }
-    // }, 500);
+    // // setInterval(() => {
+    // //   for (let move of moveArr) {
+    // //     conn.write(`Move: ${move}`)
+    // //   }
+    // // }, 500);
   });
 
   return conn;
